@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import Main from "./components/Main/Main";
+import Navbar from "./components/Navbar/Navbar";
 
-function App() {
+const App = () => {
+  const [showLight, setShowLight] = useState(true);
+  const [switchButton, setSwitchButton] = useState(true);
+  const [checkedSwitchButton, setCheckedSwitchButton] = useState(true);
+
+  const switchButtonHandler = (prevState) => {
+    if (switchButton) {
+      setSwitchButton(false);
+      setCheckedSwitchButton(false);
+      setShowLight(false);
+    } else {
+      setSwitchButton(true);
+      setCheckedSwitchButton(true);
+      setShowLight(true);
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar
+        switchButtonHandler={switchButtonHandler}
+        switchButton={switchButton}
+        checkedSwitchButton={checkedSwitchButton}
+      />
+      <Main showLight={showLight} />
     </div>
   );
-}
+};
 
 export default App;
