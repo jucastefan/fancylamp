@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import "./Navbar.css";
 import logo from "../../images/logo.png";
 import ToggleButton from "../ToggleButton/ToggleButton";
@@ -6,7 +6,7 @@ import ToggleButton from "../ToggleButton/ToggleButton";
 const Navbar = ({ switchButtonHandler, switchButton, checkedSwitchButton }) => {
   return (
     <nav className="navbar-container">
-      <a href="#" className="navbar-logo">
+      <a href="/" className="navbar-logo">
         <img src={logo} alt="FancyLamp" />
       </a>
       <div className="navbar-menu">
@@ -21,7 +21,7 @@ const Navbar = ({ switchButtonHandler, switchButton, checkedSwitchButton }) => {
             <a href="#login">Pricing</a>
           </li>
           <li>
-            <a href="#">Shop</a>
+            <a href="/">Shop</a>
           </li>
           <li>
             <ToggleButton

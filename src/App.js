@@ -16,6 +16,8 @@ const App = () => {
     } else {
       setSwitchButton(true);
       setCheckedSwitchButton(true);
+      setCheckedSwitchButton(true);
+      setCheckedSwitchButton(true);
       setShowLight(true);
     }
   };
